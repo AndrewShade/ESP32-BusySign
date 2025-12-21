@@ -1,1 +1,2 @@
 # ESP32-BusySign
+Uses two ESP32s, one sender and one receiver. The sender has a button that when pressed sends a packet every 25ms for 11 seconds to the receiver ESP32. When the receiver gets either the busy or non-busy packet it sends a signal to an addressable LED strip that then lights up either red or turns off the sign based off the status of the sender ESP32. This is used as a low power digital busy sign for calls when working from home with other people.
