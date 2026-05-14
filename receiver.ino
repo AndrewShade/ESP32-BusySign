@@ -62,7 +62,7 @@ void updateLEDs(uint8_t state)
 // ===========================
 void setup()
 {
-    Serial.begin(9600);
+    Serial.begin(115200);
     uint32_t wakeStart = millis();
 
     strip.begin();
@@ -108,14 +108,14 @@ void setup()
     // Disable all unwanted wake sources
     esp_sleep_disable_wakeup_source(ESP_SLEEP_WAKEUP_ALL);
 
-    // Timer wake after 5 seconds
+    // Timer wake after 10 seconds
     esp_sleep_enable_timer_wakeup(10ULL * 1000ULL * 1000ULL);
 
     // Prevent USB subsystem from waking device instantly
     esp_sleep_pd_config(ESP_PD_DOMAIN_RTC_PERIPH, ESP_PD_OPTION_OFF);
     esp_sleep_pd_config(ESP_PD_DOMAIN_RTC_FAST_MEM, ESP_PD_OPTION_OFF);
 
-    Serial.println("Entering DEEP SLEEP for 5 seconds...");
+    Serial.println("Entering DEEP SLEEP for 10 seconds...");
     Serial.print("Awake time (ms): ");
     Serial.println(millis() - wakeStart);
     delay(50);

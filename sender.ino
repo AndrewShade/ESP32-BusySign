@@ -103,7 +103,7 @@ void loop()
 
     Serial.println("Button pressed — blasting packets...");
 
-    // 5-second broadcast, every 25 ms (best reliability)
+    // 11-second broadcast, every 25 ms (best reliability)
     uint32_t start = millis();
     while (millis() - start < 11000)
     {
